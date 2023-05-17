@@ -1,0 +1,2 @@
+2.    Write a function that takes in a series of numbers along with a map of numbers(A) to numbers(B), and returns the series of numbers where instances of A are replaced by their respective B  
+    Ex: if the input is [1, 2, 3, 1, 5] and the map is {1: 10, 2: 33} then it should return [10, 33, 3, 10, 5]
