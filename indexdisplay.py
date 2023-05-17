@@ -1,5 +1,4 @@
 import argparse
-import json
 
 
 class IndexDisplay:
@@ -10,14 +9,10 @@ class IndexDisplay:
     def getlist(self):
         self.inputListString = input("Please enter a comma separated series of indexes you would like to see: ")
         self.inputList = self.inputListString.strip('][').split(",")
-        # print(self.inputList)
 
     def getdict(self):
         self.inputDictString = input("Please enter the dictionary or map you wish to use for this exercise: ")
-        # print(self.inputDictString)
         self.inputDict = eval(self.inputDictString)
-        # print(self.inputDict)
-        # print("inputDict is: ", type(self.inputDict))
 
     def process(self):
         parser = argparse.ArgumentParser()
@@ -28,8 +23,6 @@ class IndexDisplay:
         self.inputDict = eval(args.input_map)
         self.outputList = []
         for x in self.inputList:
-            #     print("X is: " + x)
-            #     print("X class is", type(x))
             try:
                 if self.inputDict[int(x)]:
                     self.outputList.append(self.inputDict[int(x)])
