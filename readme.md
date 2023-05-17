@@ -24,3 +24,6 @@ EXAMPLE: python indexdisplay.py "[1, 2, 3, 1, 5]" "{1: 10, 2: 33, 5: 28}"
 ```
 Assumptions:
 1. The inputs will be provided from another system and passed via command line using arg parser.
+
+To run tests: 
+`python -m unittest D:\pycharm_projects\mettleInterview\test_indexdisplay.py`
