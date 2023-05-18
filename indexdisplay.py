@@ -1,4 +1,5 @@
 import argparse
+import json
 
 
 class IndexDisplay:
@@ -17,18 +18,21 @@ class IndexDisplay:
     def process(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("input_list", help="Input list of indices you would like printed")
-        parser.add_argument("input_map", help="Input map of values for exercise")
+        parser.add_argument("input_file", help="Input name of json file")
         args = parser.parse_args()
         self.inputList = args.input_list.strip('][').split(",")
-        self.inputDict = eval(args.input_map)
-        self.outputList = []
+        # self.inputDict = eval(args.input_map)
+        with open(args.input_file) as file:
+            self.inputDict = json.load(file)
+        outputList = []
         for x in self.inputList:
             try:
-                if self.inputDict[int(x)]:
-                    self.outputList.append(self.inputDict[int(x)])
+                if self.inputDict[x]:
+                    print(self.inputDict[x])
+                    outputList.append(self.inputDict[x])
             except KeyError:
-                self.outputList.append(int(x))
-        print(f"Your list with substitutions is: {self.outputList}")
+                outputList.append(x)
+        print(f"Your list with substitutions is: {outputList}")
 
 
 if __name__ == '__main__':

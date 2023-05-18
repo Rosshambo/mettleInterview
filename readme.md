@@ -9,18 +9,18 @@ Built using python 3.9
 
 To run using python 3.3+:
 ```commandline
-usage: indexdisplay.py [-h] input_list input_map
+usage: indexdisplay.py [-h] input_list input_file
 
 positional arguments:
   input_list  Input list of indices you would like printed
-  input_map   Input map of values for exercise
+  input_file  Input name of json file
 
 optional arguments:
   -h, --help  show this help message and exit
   
 ---------------------------------------------------------------------------------------------
   
-EXAMPLE: python indexdisplay.py "[1, 2, 3, 1, 5]" "{1: 10, 2: 33, 5: 28}"
+EXAMPLE: python indexdisplay.py [apple,1,five] input.json
 ```
 Assumptions:
 1. The inputs will be provided from another system and passed via command line using arg parser.
